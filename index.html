@@ -1,10 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <meta charset="utf-8">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <link href="styles/inbox.css" rel="stylesheet" type="text/css">
+    <link href="styles/cursor.css" rel="stylesheet" type="text/css">
+    <title>Astralgo</title>
+    <link rel="shortcut icon" href="pics/icon-astral.png" type="image/x-icon">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.1/raphael.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/graphdracula/1.0.3/dracula.min.js"></script>
 </head>
-<body>
+    <body>
+        <h1>A<sdds>str</sdds>algo</h1>
+        <h2 id="lol">Руководство по осознанию строковых алгоритмов</h2>
 
-</body>
+    <!--Поиск подстроки в строке-->
+        <section id='d3' style="position:center; z-index:1">
+            <h3>Поиск подстроки в строке</h3>
+            <p>str</p>
+
+<!--            <div id="canvas" style="border: 1px solid #5a77ff;height: auto; width: auto; text-align: center"></div>-->
+            <p>substr</p>
+            <p>find(substr, str)</p>
+<!--            <div id='ooo'  width="50" height="50" style="position: relative; z-index:3">-->
+<!--                <canvas id="cnvss"  width="40" height="40" style="border:1px solid #5a77ff;">-->
+<!--                    You rooooooooool-->
+<!--                </canvas>-->
+<!--            </div>-->
+            <p>lol</p>
+        </section>
+
+    <!--Преф-->
+        <section>
+            <h3>Префикс-функция</h3>
+            <p>pref(str) = наибольший собственный префикс, совпадающий с постфиксом</p>
+            <canvas id='canvass2' width='100' height='100' style="position: center"  style="border:1px solid #ff4963;">
+                Your browser does not support HTML5 Canvas.
+            </canvas>
+        </section>
+
+    <!--Преф фаст-->
+        <section>
+            <h3>Быстрое вычисление префикс-функции O(n)</h3>
+        </section>
+
+    <!--    Визуализация    -->
+    <section>
+        <h3>Визуализашка префикс-функции</h3>
+        <form>
+            <input type=text name=textField class="txtform" placeholder="Введите слова через пробел" size=90> <input type="button" class="btn" value="Build" onClick="getDataAndGo()">
+        </form>
+    </section>
+
+    <!--Преф-функ допы-->
+        <section class="hide_section" style="border-color: #ffffff">
+        <div class="slide">
+            <h3 class="slide_root"> 👉 Больше информации о префикс-функции   ↴</h3>
+            <p class="content"> <a href="https://cp-algorithms.com/string/prefix-function.html">Prefix function. Knuth–Morris–Pratt algorithm</a></p>
+            <p class="content"> <a href=""></a></p>
+            <p class="content"> <a href=""></a></p>
+            <p class="content"> <a href=""></a></p>
+            <p class="content"> <a href=""></a></p>
+            <p class="content"> <a href=""></a></p>
+            </p>
+        </div>
+    </section>
+
+    <!--КМП-->
+        <section>
+            <h3>Алгоритм Кнута-Морриса-Пратта</h3>
+            <p>str</p>
+            <p>substr</p>
+
+            <p> <br> Соединим строки, вставим между ними уникальный символ и посчитаем префикс-функцию</p>
+            <p>substr#str</p>
+            <p>p</p>
+
+        </section>
+
+    <!--КМП допы-->
+        <section class="hide_section" style="border-color: #ffffff">
+            <div class="slide">
+                <h3 class="slide_root"> 👉 Больше информации о КМП   ↴</h3>
+                <p class="content"> <a href="https://cp-algorithms.com/string/prefix-function.html">Prefix function. Knuth–Morris–Pratt algorithm</a></p>
+                <p class="content"> <a href=""></a></p>
+                <p class="content"> <a href=""></a></p>
+                <p class="content"> <a href=""></a></p>
+                <p class="content"> <a href=""></a></p>
+                <p class="content"> <a href=""></a></p>
+                </p>
+            </div>
+        </section>
+
+    <!--Преф реалиизация-->
+        <section style="padding-bottom: 0"><h3>Быстрое вычисление префикс-функции на C++
+            <img src="pics/pref-func-cpp.png" width="80%" height="80%" alt="Моё тестовое изображение">
+            <br>
+            <button onclick="copyButton()" style="border-color: #ffffff; background-color: #ffffff; border-radius: 20px" >copy</button>
+
+        </h3></section>
+
+    <!--Бор-->
+        <section>
+            <h3>Префиксное дерево aka Бор</h3>
+            <p>У нас есть несколько строк и мы хотим их как-то хранить</p>
+            <p>[visual]</p>
+            <p>Первое, что приходит в голову - хранить его в виде списка строк</p>
+            <p>[visual]</p>
+            <p>Но заметим, что некоторые строки могут содержать в себе другие, а это значит, что мы будем несколько раз хранить одинаковые объекты</p>
+            <p>Например, <b>ПРЕДПРИНИМАТЕЛЬСТВО</b> содержит в себе <b>ПРЕДПРИНИМАТЕЛЬ</b> <br>
+                И если мы хотим хранить два этих слова, то логично будет хранить их как-то так: <b>ПРЕДПРИНИМАТЕЛЬ#СТВО</b> - 19* букв вместо 34</p>
+            <p>А если мы хотим также хранить и слово <b>ПРЕДПРИНИМАТЕЛЬНИЦА</b>?</p>
+            <p>[visual]</p>
+            <p>Добавим еще <b>ПРЕДПРИНЯТЬ</b></p>
+            <p>[visual]</p>
+            <p>Итого 26* символов против 64 в списке строк</p>
+            <p>Заметим, что эта структура похожа на дерево </p>
+            <p>Раз уж так, давайте преобразуем наш список строк в дерево</p>
+            <p>[visual]</p>
+            <p>Заметим, что спуск по дереву строит все префиксы какой-либо строки <br>
+                Возможно, мы сможем как-то использовать это свойство для подсчета префикс-функции</p>
+            <p>[visual]</p>
+            <p>Кстати, наш Бор можно представить в более компактном виде:</p>
+            <p>[visual]</p>
+            <p>Бор такого вида называется <b>сжатым бором</b></p>
+        </section>
+
+<!--    Визуализация    -->
+        <section>
+            <h3>Визуализашка бора</h3>
+            <form>
+                <input type=text name=textField class="txtform" placeholder="Введите слова через пробел" size=90> <input type="button" class="btn" value="Build" onClick="getDataAndGo()">
+            </form>
+        </section>
+
+        <!--    Визуализация    -->
+        <section>
+            <h3>Визуализашка сжатого бора</h3>
+            <form>
+                <input type=text name=textField class="txtform-green" placeholder="Введите слова через пробел" size=90> <input type="button" class="btn-green" value="Build" onClick="getDataAndGo()">
+            </form>
+        </section>
+
+    <!--Бор допы-->
+        <section class="hide_section" style="border-color: #ffffff">
+            <div class="slide">
+                <h3 class="slide_root"> 👉 Больше информации о Боре   ↴</h3>
+                <p class="content">Как и почему используют Бор: <br>
+                    <ul class="content">
+                        <li>[Хранение строк] — если у некоторых строк одинаковые префиксы, бор занимает гораздо меньше места, чем обычный список строк </li>
+                        <li>[Сортировка строк] — бор+dfs за один обход выводит строки в лексикографическом порядке</li>
+                        <li>[Строковый SET] — быстрое добавление, удаление слова и проверка наличия его в боре</li>
+                    </ul>
+                    <p class="content"> <a href="https://ru.algorithmica.org/cs/string-structures/trie/">Algorithmica</a></p>
+                    <p class="content"> <a href="https://wiki.algocode.ru/index.php?title=%D0%91%D0%BE%D1%80">Algocode wiki</a></p>
+                    <p class="content"> <a href="https://brestprog.by/topics/trie/">Bestprog</a></p>
+                    <p class="content"> <a href="https://cmps-people.ok.ubc.ca/ylucet/DS/Trie.html"></a>Trie visualization</p>
+                    <p class="content"> <a href="https://cmps-people.ok.ubc.ca/ylucet/DS/CompressedTrie.html"></a>Compressed trie visualization</p>
+                    <p class="content"> <a href=""></a></p>
+                    <p class="content"> <a href=""></a></p>
+                    <p class="content"> <a href=""></a></p>
+                    <p class="content"> <a href=""></a></p>
+                    <p class="content"> <a href=""></a></p>
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h3>Поиск нескольких подстрок в строке</h3>
+            <p><code data-language="html">
+                class
+            </code></p>
+        </section>
+
+        <section>
+            <h3>
+                Префикс-функция + Бор =
+                <img src="pics/fish.png" width="15%" height="15%" style="position: relative;top: 19px; " alt="Моё тестовое изображение">
+            </h3>
+        </section>
+
+        <section class="hide_section" style="border-color: #ffffff">
+            <div class="slide">
+                <h3 class="slide_root"> 👉 Больше информации об алгоритме Ахо-Корасика   ↴</h3>
+                <p class="content">Примеры использования: <br>
+                <ul class="content">
+                    <li>ойо</li>
+                    <li>йо</li>
+                    <li>ой</li>
+                </ul>
+                <p class="content"> <a href="https://ru.algorithmica.org/cs/string-structures/trie/">Algorithmica</a></p>
+                <p class="content"> <a href="https://wiki.algocode.ru/index.php?title=%D0%91%D0%BE%D1%80">Algocode wiki</a></p>
+                <p class="content"> <a href="https://brestprog.by/topics/trie/">Bestprog</a></p>
+                <p class="content"> <a href="https://cmps-people.ok.ubc.ca/ylucet/DS/Trie.html"></a>Trie visualization</p>
+                <p class="content"> <a href="https://cmps-people.ok.ubc.ca/ylucet/DS/CompressedTrie.html"></a>Compressed trie visualization</p>
+                <p class="content"> <a href=""></a></p>
+                <p class="content"> <a href=""></a></p>
+                <p class="content"> <a href=""></a></p>
+                <p class="content"> <a href=""></a></p>
+                <p class="content"> <a href=""></a></p>
+                </p>
+            </div>
+        </section>
+
+        <p><a href="https://csacademy.com/app/graph_editor/">The best graph editor</a></p>
+        <p><a href="https://codeforces.com/contest/963/problem/D">Задача-1</a></p>
+        <p><a href="https://codeforces.com/contest/1202/problem/E">Задача-2</a></p>
+        <p><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=533">Задача-3</a></p>
+        <p><a href="https://stackoverflow.com/questions/23336807/when-to-use-rabin-karp-or-kmp-algorithms#:~:text=When%20you%20want%20to%20search,this%20is%20the%20general%20approach.">When to use Rabin-Karp or KMP algos</a></p>
+        <p><a href="https://usaco.guide/adv/string-search?lang=cpp">USACO guide string algos</a></p>
+
+        <script src="scripts/main.js"></script>
+        <script src="scripts/cursor.js"></script>
+
+        <form>
+            <input type = "button" value = "Темная тема" onclick = "Warn();" />
+            <input type = "button" value = "Кнопка" onclick = "Warn();" />
+            <input type = "button" value = "Сменить" onclick = "Warn();" />
+            <input type = "button" value = "Сменить" onclick = "Warn();" />
+        </form>
+
+    </body>
 </html>

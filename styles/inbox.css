@@ -1,0 +1,23 @@
+.slide p, ul {
+    display:none;
+}
+
+.btn, .btn-green {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(187, 100, 230);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.txtform, .txtform-green{
+    border-color: #bb64e6;
+    border-radius: 10px;
+}
+
+.btn-green, .txtform-green{
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(11, 176, 0);
+}
