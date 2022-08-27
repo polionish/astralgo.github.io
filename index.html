@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <link href="styles/style.css" rel="stylesheet" type="text/css">
     <link href="styles/inbox.css" rel="stylesheet" type="text/css">
+    <link href="styles/dark_theme.css" rel="stylesheet" type="text/css">
     <link href="styles/cursor.css" rel="stylesheet" type="text/css">
     <title>Astralgo</title>
     <link rel="shortcut icon" href="pics/icon-astral.png" type="image/x-icon">
@@ -14,10 +15,14 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/graphdracula/1.0.3/dracula.min.js"></script>
 </head>
     <body>
-        <h1>A<sdds>str</sdds>algo</h1>
-        <h2 id="lol">Руководство по осознанию строковых алгоритмов</h2>
 
-    <!--Поиск подстроки в строке-->
+        <form>
+            <img src="pics/dark_mode-2.png" width="35" height="35" style="opacity: 100%;display: inline-block; position: relative" alt="Моё тестовое изображение" onclick = "changeThemeMode();">
+            <img src="pics/dark_mode.png" width="35" height="35" style="opacity: 100%;display: inline-block; position: relative" alt="Моё тестовое изображение" onclick = "changeShift();">
+
+            <h1 style="display: inline-block; position: relative; left: 37%;" >A<sdds>str</sdds>algo </h1>
+            <h2 id="lol">Руководство по осознанию строковых алгоритмов</h2>
+            </form>    <!--Поиск подстроки в строке-->
         <section id='d3' style="position:center; z-index:1">
             <h3>Поиск подстроки в строке</h3>
             <p>str</p>
@@ -223,5 +228,16 @@
             <input type = "button" value = "Сменить" onclick = "Warn();" />
         </form>
 
+    <script>
+        function changeThemeMode() {
+        let element = document.body;
+        element.classList.toggle("dark-mode");
+        }
+
+        function changeShift() {
+            let element = document.body;
+            element.classList.toggle("change-shift");
+        }
+    </script>
     </body>
 </html>

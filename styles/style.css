@@ -8,6 +8,13 @@ html {
     background-color: #ffffff;
 }
 
+body {
+    padding: 25px;
+    background-color: white;
+    color: #414141;
+    font-size: 25px;
+}
+
 h1 {
     font-size: 60px;
     text-align: center;
@@ -76,9 +83,9 @@ a {
 
 h3 {
     font-size: 20px;
-    font-family: 'Roboto Slab', Roboto Slab, serif;
-    color: rgba(0, 0, 0, 0.93);
     font-weight: lighter;
+    font-weight: bold;
+
     text-align: center;
     margin-top: 0;
     margin-bottom: 20px;

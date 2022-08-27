@@ -12,6 +12,16 @@
     border-radius: 10px;
 }
 
+.btnX {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(187, 100, 230);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
 .txtform, .txtform-green{
     border-color: #bb64e6;
     border-radius: 10px;

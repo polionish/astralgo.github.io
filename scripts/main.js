@@ -9,11 +9,11 @@ for (let i = 0; i < slides.length; ++i) {
                 if (child[cI].style.display === 'block'){
                     child[cI].style.display = 'none';
                     this.parentNode.parentNode.style.borderColor = 'rgb(255,255,255)';
-                    this.parentNode.parentNode.style.backgroundColor = 'rgb(255,255,255)';
+                    this.parentNode.parentNode.style.backgroundColor = 'rgba(255,255,255,0)';
                 } else {
                     child[cI].style.display = 'block';
                     this.parentNode.parentNode.style.borderColor = 'rgb(187,100,230)';
-                    this.parentNode.parentNode.style.backgroundColor = 'rgba(239,237,255,0.53)';
+                    this.parentNode.parentNode.style.backgroundColor = 'rgb(239,237,255)';
                 }
             }
         }
