@@ -13,7 +13,7 @@ function drawGraph(id) {
             return d.id.substring(0, d.id.lastIndexOf("."));
         });
 
-    d3.csv("../data/"+id+".csv", function (error, data) {
+    d3.csv("/data/"+id+".csv", function (error, data) {
         if (error) throw error;
 
         let root = stratify(data)
