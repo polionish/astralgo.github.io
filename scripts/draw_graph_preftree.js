@@ -13,7 +13,7 @@ function drawGraph(id) {
             return d.id.substring(0, d.id.lastIndexOf("."));
         });
 
-    d3.csv("/data/"+id+".csv", function (error, data) {
+    d3.csv("https://github.com/polionish/astralgo.github.io/blob/885196154aae996bd537430dc858274a70f74b9e/data/example-1.csv", function (error, data) {
         if (error) throw error;
 
         let root = stratify(data)
