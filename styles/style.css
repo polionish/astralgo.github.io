@@ -33,7 +33,7 @@ h2 {
     margin: 0;
     padding-top: 0;
     padding-bottom: 40px;
-    // text-shadow: 1px 1px 1px #a8a8a8;
+/ / text-shadow: 1 px 1 px 1 px #a8a8a8;
 }
 
 dl {
@@ -59,7 +59,7 @@ body {
     /*width: 800px;*/
     margin: 0 auto;
     padding: 0 20px 20px 20px;
-    // border: 1px solid darkgrey;
+/ / border: 1 px solid darkgrey;
 }
 
 sdds {
@@ -81,6 +81,30 @@ a {
     margin: 0;
 }
 
+a {
+    color: rgba(72, 72, 72, 0.55); /* Цвет обычной ссылки */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    font-weight: normal;
+}
+/*a:visited {*/
+/*    color: rgb(0, 190, 16); !* Цвет посещённой ссылки *!*/
+/*    font-weight: lighter;*/
+/*}*/
+a:hover {
+    color: rgb(187, 100, 230); /* Цвет ссылки при наведении на нее курсора мыши */
+    text-shadow: rgb(47, 222, 20) 2px 2px;
+    font-weight: bolder;
+}
+.dark-mode a{
+    color: rgb(197, 197, 199);
+}
+
+.dark-mode a:hover {
+    color: rgb(187, 100, 230); /* Цвет ссылки при наведении на нее курсора мыши */
+    text-shadow: rgb(47, 222, 20) 2px 2px;
+    font-weight: bolder;
+}
+
 h3 {
     font-size: 20px;
     font-weight: lighter;
@@ -100,4 +124,46 @@ section {
     padding: 20px 20px 20px 20px;
     border: 2px solid #d2d2d2;
     border-radius: 2px 2px 2px 2px;
+}
+
+section.contents_graph {
+    width: 840px;
+    margin: 0 auto 20px;
+    padding: 0;
+    border: 0px;
+    border-radius: 2px 2px 2px 2px;
+}
+
+.text2 {
+    display: none;
+}
+
+.slogan:hover .text1 {
+    display: none;
+}
+
+.slogan:hover .text2 {
+    display: block;
+}
+
+.additions {
+    display: inline-block;
+    border: thin solid #bb64e6;
+    border-radius: 10px;
+    margin: 2px 0 5px 0;
+}
+
+.text-glow:hover {
+    text-shadow: 2px 2px 2px rgb(148, 230, 100);
+    -webkit-transition: 0s linear 0s;
+    -moz-transition: 0s linear 0s;
+    -o-transition: 0s linear 0s;
+    transition: 0.1s linear 0s;
+    outline: 0 none;
+}
+
+svg {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
 }

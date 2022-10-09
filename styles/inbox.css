@@ -1,5 +1,5 @@
 .slide p, ul {
-    display:none;
+    display: none;
 }
 
 .btn, .btn-green {
@@ -22,12 +22,29 @@
     transform: translate(-50%, 0);
 }
 
-.txtform, .txtform-green{
+.txt-form, .txt-form-small {
+    width: 630px;
+    margin-top: 10px;
+    resize: vertical;
+    min-height: 32px;
+    height: 32px;
+    padding-left: 7px;
     border-color: #bb64e6;
     border-radius: 10px;
+    letter-spacing: 2px;
 }
 
-.btn-green, .txtform-green{
+.txt-form-small{
+    color: rgba(72, 72, 72, 0.55);
+}
+
+.txt-form, .txtform-green {
+    background-image: linear-gradient(to left, #008d69, #4285f4, #b523ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-green, .txtform-green {
     background-color: rgb(255, 255, 255);
     border-color: rgb(11, 176, 0);
 }

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <link href="../styles/style.css" rel="stylesheet" type="text/css">
+    <link href="../styles/roboto_shift.css" rel="stylesheet" type="text/css">
+    <link href="../styles/inbox.css" rel="stylesheet" type="text/css">
+    <link href="../styles/dark_theme.css" rel="stylesheet" type="text/css">
+    <link href="../styles/cursor.css" rel="stylesheet" type="text/css">
+    <link href="../styles/prefix-tree.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="../pics/icon-astral.png" type="image/x-icon">
+
+    <script src="../scripts/main.js" defer></script>
+    <script src="../scripts/cursor.js" defer></script>
+    <script src="../scripts/buttons_setting.js" defer></script>
+    <script src="../scripts/keys.js" defer></script>
+    <script src="../scripts/calculate-prefix-function.js" defer></script>
+    <script src="../scripts/build_vizuals.js" defer></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="../scripts/dark-mode-total.js" defer></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <title>Astralgo</title>
+</head>
+
+<body>
+
+    <!--Лого-->
+    <form>
+        <img src="../pics/dark_mode-2.png" width="35" height="35" style="opacity: 60%;display: inline-block; position: fixed; top: 10px; z-index: 1000;" alt="Моё тестовое изображение" onclick = "changeThemeMode();">
+        <img src="../pics/shift_mode.png" width="35" height="35" style="opacity: 50%;display: inline-block; position: fixed; top: 10px; left: 70px; z-index: 1000;" alt="Моё тестовое изображение" onclick = "changeShift();">
+
+        <h1 style=" position: relative; " >A<sdds>str</sdds>algo </h1>
+        <h2 id="lol">Руководство по осознанию строковых алгоритмов</h2>
+    </form>
+
+<!--    &lt;!&ndash;Поиск подстроки в строке&ndash;&gt;-->
+<!--    <section id='d3' style="position:center; z-index:1">-->
+<!--        <h3>Поиск подстроки в строке</h3>-->
+<!--        <p>str</p>-->
+
+<!--        &lt;!&ndash;            <div id="canvas" style="border: 1px solid #5a77ff;height: auto; width: auto; text-align: center"></div>&ndash;&gt;-->
+<!--        <p>substr</p>-->
+<!--        <p>find(substr, str)</p>-->
+<!--        &lt;!&ndash;            <div id='ooo'  width="50" height="50" style="position: relative; z-index:3">&ndash;&gt;-->
+<!--        &lt;!&ndash;                <canvas id="cnvss"  width="40" height="40" style="border:1px solid #5a77ff;">&ndash;&gt;-->
+<!--        &lt;!&ndash;                    You rooooooooool&ndash;&gt;-->
+<!--        &lt;!&ndash;                </canvas>&ndash;&gt;-->
+<!--        &lt;!&ndash;            </div>&ndash;&gt;-->
+<!--        <p>lol</p>-->
+<!--    </section>-->
+
+    <!--    Анимированная визуализация работы префикс-функции на пользовательских данных    -->
+    <section>
+        <h3>Калькулятор префикс-функции </br>Анимация работы префикс-функции на пользовательских данных  </h3>
+        <form>
+            <textarea class="txt-form" id="pref-fun-input" placeholder="Введите текст" style=" font-size: xx-large; display: block; width: 630px" spellcheck="false"  ></textarea>
+            <div style="text-align: center;">
+                <input type="button" class="btn" value="  посчитать  " onClick="calculatePrefFun()" style="height: 32px; ">
+                <input type="button" class="btn" id="animate_but" value=" анимировать " onClick="buildPrefixFunction()" style="height: 32px;">
+                <input type="button" class="btn" value="  остановить " onClick="stopTimeouts()" style="height:32px; margin-top: 10px;  ">
+            </div>
+            <textarea class="txt-form" id="pref-fun-output" spellcheck="false" style="width: 630px; margin-top: 10px; resize: vertical; min-height: 32px; height: 32px; padding-left: 7px; font-size: xx-large" readonly></textarea>
+        </form>
+
+        <div style=" display: block; margin: 10px auto auto;text-align: center;">
+            <svg id="prefix-fun-vis" width="800" height="200" style="display: inline; border: 1px solid rgb(187, 100, 230); border-radius: 20px;"> </svg>
+        </div>
+        <textarea class="txt-form" id="pref-fun-last-log" spellcheck="false" style="width: 630px; margin-top: 10px; resize: vertical; min-height: 32px; height: 32px; padding-left: 7px; font-size: larger" readonly></textarea>
+        <textarea class="txt-form-small" id="pref-fun-logs" spellcheck="false" style=" pointer-events: auto; width: 790px; margin-top: 10px; resize: vertical; min-height: 32px; height: 100px; padding-left: 7px; font-size: small" readonly></textarea>
+
+    </section>
+
+    <!--Префикс-функция-->
+    <section>
+        <h3>Префикс-функция</h3>
+        <img src="../pics/pref-fun-1.jpg" style="width: 800px; display: block; margin: 0 auto;"  alt="Моё тестовое изображение">
+        <p style="text-align: center; margin-bottom: 0">Мы построили префикс-функцию</p>
+        <p style="text-align: center; margin-top: 0"><strong>Но это можно сделать значительно быстрее</strong></p>
+
+    </section>
+
+    <!--Префикс-функция быстрая-->
+    <section>
+        <h3>Быстрое вычисление префикс-функции O(n)</h3>
+        <img src="../pics/fast-pref-fun-1.jpg" style="width: 800px; display: block; margin: 0 auto;"  alt="Моё тестовое изображение">
+
+        <img src="../pics/fast-pref-fun-2.jpg" style="width: 800px; display: block; margin: 0 auto;"  alt="Моё тестовое изображение">
+
+    </section>
+
+
+    <!--Преф реалиизация-->
+    <section style="padding-bottom: 0"><h3>Быстрое вычисление префикс-функции на C++
+        <img src="../pics/pref-func-cpp.png" width="80%" height="80%" alt="Моё тестовое изображение">
+        <br>
+        <button onclick="copyButton()" style="border-color: #ffffff; background-color: #ffffff; border-radius: 20px" >copy</button>
+
+    </h3></section>
+
+    <!--Преф-функ допы-->
+    <section class="hide_section" style="border-color: #ffffff">
+        <div class="slide">
+            <h3 class="slide_root"> 👉 Больше информации о префикс-функции   ↴</h3>
+            <p class="content"> <a href="https://cp-algorithms.com/string/prefix-function.html">Prefix function. Knuth–Morris–Pratt algorithm</a></p>
+            <p class="content"> <a href=""></a></p>
+            <p class="content"> <a href=""></a></p>
+            <p class="content"> <a href=""></a></p>
+            <p class="content"> <a href=""></a></p>
+            <p class="content"> <a href=""></a></p>
+            </p>
+        </div>
+    </section>
+</body>
+</html>

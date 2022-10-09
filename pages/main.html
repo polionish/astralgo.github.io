@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+
+    <link href="../styles/style.css" rel="stylesheet" type="text/css">
+    <link href="../styles/roboto_shift.css" rel="stylesheet" type="text/css">
+    <link href="../styles/inbox.css" rel="stylesheet" type="text/css">
+    <link href="../styles/prefix-tree.css" rel="stylesheet" type="text/css">
+    <link href="../styles/graph_d3.css" rel="stylesheet" type="text/css">
+    <link href="../styles/dark_theme.css" rel="stylesheet" type="text/css">
+    <link href="../styles/cursor.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="../pics/icon-astral.png" type="image/x-icon">
+
+    <script src="https://code.jquery.com/jquery-2.1.3.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="jsnetworkx.js"> </script>
+    <script type="text/javascript" src="jsnetworkx.js"></script>
+    <script src="../scripts/main.js" defer></script>
+    <script src="../scripts/main_graph_visibility.js" defer></script>
+    <script src="../scripts/cursor.js" defer></script>
+    <script src="../scripts/buttons_setting.js" defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3-color@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-interpolate@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-scale-chromatic@3"></script>
+
+    <script src="https://d3js.org/d3.v4.min.js" defer></script>
+    <script src="../scripts/mainpage_graph.js" defer></script>
+    <script src="../scripts/dark-mode-total.js" defer></script>
+
+    <title>Astralgo</title>
+</head>
+
+<body style="overflow-x: hidden;">
+
+    <!--Лого-->
+    <form>
+        <img src="../pics/dark_mode-2.png" width="35" height="35" style="opacity: 60%;display: inline-block; position: fixed; top: 10px; z-index: 1000;" alt="Моё тестовое изображение" onclick = "changeThemeMode();">
+        <img src="../pics/shift_mode.png" width="35" height="35" style="opacity: 50%;display: inline-block; position: fixed; top: 10px; left: 70px; z-index: 1000;" alt="Моё тестовое изображение" onclick = "changeShift();">
+
+        <h1 style=" position: relative;">A<sdds>str</sdds>algo </h1>
+<!--        <h2 id="lol">Руководство по осознанию строковых алгоритмов</h2>-->
+            <h2 class="slogan" style="padding: 0; margin-bottom: 35px">
+                <div class="text1" style="padding: 0; margin: 0">Руководство по осознанию строковых алгоритмов</div>
+                <div class="text2" style="padding: 0; margin: 0">Визуализатор строковых алгоритмов</div>
+            </h2>
+    </form>
+
+    <!--Секция-оглавление и граф взаимосвязей-->
+    <section>
+        <h3 id="slide_root"  style="padding: 0; margin-bottom: 30px;"> Оглавление <div class="text-glow" style="display: inline-block;">⟷</div> Граф</h3>
+        <div  id="contents_txt">
+            <h3><a href="pref-fun-page.html">
+                Поиск подстроки в строке<br>
+                Префикс-функция <br>
+                Быстрое вычисление префикс-функции<br>
+                Калькулятор префикс-функции<br>
+                Анимированная визуализация префикс-функции </a></h3>
+            <h3><a href="kmp-page.html">Алгоритм Кнута-Мориса-Пратта<br>
+                Калькулятор КМП <br>
+                Анимированная визуализация КМП </a></h3>
+            <h3><a href="prefix-tree-page.html">
+                Префиксное дерево (бор)<br>
+                Сжатое префиксное дерево</a></h3>
+<!--            <h3><a href="some_substr_in_str.html">Поиск нескольких подстрок в строке</a></h3>-->
+        </div>
+        <svg id="contents_graph" width="835" height="371.5" style="display: none"> </svg>
+    </section>
+
+    <!--Дополнительные ресурсы-->
+    <section>
+        <h3>Дополнительные ресурсы</h3>
+        <p class="additions"><a href="https://csacademy.com/app/graph_editor/">Graph editor</a></p>
+        <p class="additions"><a href="https://stackoverflow.com/questions/23336807/when-to-use-rabin-karp-or-kmp-algorithms#:~:text=When%20you%20want%20to%20search,this%20is%20the%20general%20approach.">When to use Rabin-Karp or KMP algos</a></p>
+        <p class="additions"><a href="https://usaco.guide/adv/string-search?lang=cpp">USACO guide string algos</a></p>
+        <p class="additions"><a href="http://www-igm.univ-mlv.fr/~lecroq/string/index.html">EXACT STRING MATCHING ALGORITHMS</a></p>
+        <p class="additions"><a href="https://codeforces.com/contest/963/problem/D">Task-1 (Aho–Corasick)</a></p>
+        <p class="additions"><a href="https://codeforces.com/contest/1202/problem/E">Task-2 (Aho–Corasick)</a></p>
+        <p class="additions"><a href="http://www.usaco.org/index.php?page=viewproblem2&cpid=533">Task-3 (Aho–Corasick)</a></p>
+    </section>
+
+</body>
+
+</html>

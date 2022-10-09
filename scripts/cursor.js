@@ -9,3 +9,7 @@ $(document).on('click', function (e) {
             $(this).remove();
         });
 });
+
+
+
+

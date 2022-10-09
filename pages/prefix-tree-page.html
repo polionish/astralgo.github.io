@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <link href="../styles/style.css" rel="stylesheet" type="text/css">
+    <link href="../styles/roboto_shift.css" rel="stylesheet" type="text/css">
+    <link href="../styles/inbox.css" rel="stylesheet" type="text/css">
+    <link href="../styles/dark_theme.css" rel="stylesheet" type="text/css">
+    <link href="../styles/cursor.css" rel="stylesheet" type="text/css">
+    <link href="../styles/prefix-tree.css" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="../pics/icon-astral.png" type="image/x-icon">
+
+    <script src="../scripts/main.js" defer></script>
+    <script src="../scripts/cursor.js" defer></script>
+    <script src="../scripts/buttons_setting.js" defer></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.js" defer></script>
+    <script src="https://d3js.org/d3.v7.min.js" defer></script>
+    <script src="../scripts/keys.js" defer></script>
+    <script src="../scripts/draw_graph_preftree.js" defer></script>
+    <script src="../scripts/build_vizuals.js" defer></script>
+    <script src="../scripts/prefix-tree-userdata.js" defer></script>
+    <script src="https://d3js.org/d3.v4.min.js" defer></script>
+
+    <title>Astralgo</title>
+</head>
+
+<body>
+
+    <!--Лого-->
+    <form>
+        <img src="../pics/dark_mode-2.png" width="35" height="35" style="opacity: 60%;display: inline-block; position: fixed; top: 10px; z-index: 1000;" alt="Моё тестовое изображение" onclick = "changeThemeMode();">
+        <img src="../pics/shift_mode.png" width="35" height="35" style="opacity: 50%;display: inline-block; position: fixed; top: 10px; left: 70px; z-index: 1000;" alt="Моё тестовое изображение" onclick = "changeShift();">
+
+        <h1 style=" position: relative; " >A<sdds>str</sdds>algo </h1>
+        <h2 id="lol">Руководство по осознанию строковых алгоритмов</h2>
+    </form>
+
+    <!--Бор-->
+    <section>
+        <h3>Префиксное дерево aka Бор</h3>
+        <p>У нас есть несколько строк и мы хотим их как-то хранить</p>
+
+        <img src="../pics/string_forbor.jpg" style="width: 300px; display: block; margin: 0 auto;"  alt="Моё тестовое изображение">
+
+        <p>Мы хотим хранить их так, чтобы использовать для этого как можно меньше букв</p>
+        <p>Первое, что приходит в голову - хранить его в виде списка строк</p>
+        <p>Но заметим, что некоторые строки могут содержать в себе другие, а это значит, что мы будем несколько раз хранить одинаковые объекты</p>
+        <p>Например, <b>ПРЕДПРИНИМАТЕЛЬСТВО</b> содержит в себе <b>ПРЕДПРИНИМАТЕЛЬ</b> <br>
+            И если мы хотим хранить два этих слова, то логично будет хранить их как-то так: <b>ПРЕДПРИНИМАТЕЛЬ#СТВО</b> - 19* букв вместо 34</p>
+        <svg id="example-1" width="400" height="100" onload="drawGraph(id)"> </svg>
+    <!--    <button type="submit" onclick="drawGraph()"> Submit</button>-->
+    <!--    <script> drawGraph("example-1");</script>-->
+        <p>А если мы хотим также хранить и слово <b>ПРЕДПРИНИМАТЕЛЬНИЦА</b>?</p>
+
+        <svg id="example-2" width="400" height="100" onload="drawGraph(id)"> </svg>
+
+        <p>Добавим еще <b>ПРЕДПРИНЯТЬ</b></p>
+
+        <svg id="example-3" width="450" height="100" onload="drawGraph(id)"> </svg>
+
+        <p>Итого 26* символов против 64 в списке строк</p>
+        <p>У нас получилась древовидная структура </p>
+        <p>Раз уж так, давайте преобразуем наш список строк в дерево</p>
+        <div style=" display: block; margin: 0 auto; text-align: center;">
+            <img src="../pics/string_forbor.jpg" style="width: 300px;margin-bottom: 56px"  alt="Моё тестовое изображение">
+            <img src="../pics/arrow.jpg" style="width: 100px; margin-bottom: 70px"  alt="Моё тестовое изображение">
+            <svg id="example-4" width="340" height="200" style="display: inline" onload="drawGraph(id)"> </svg>
+        </div>
+        <p>Заметим, что спуск по дереву строит все префиксы какой-либо строки <br>
+            Возможно, мы сможем как-то использовать это свойство для подсчета префикс-функции</p>
+        <p>Полученную структуру можно представить в более компактном виде:</p>
+        <div style=" display: block; margin: 0 auto; text-align: center;">
+            <svg id="example-5" width="340" height="200" style="display: inline" onload="drawGraph(id)"> </svg>
+            <img src="../pics/arrow.jpg" style="width: 100px; margin-bottom: 70px; padding-left: 0px"  alt="Моё тестовое изображение">
+            <svg id="example-6" width="340" height="200" style="display: inline" onload="drawGraph(id)"> </svg>
+        </div>
+        <p>Бор такого вида называется <b>сжатым бором</b></p>
+    </section>
+
+    <!--    Визуализация    -->
+    <!--<section>-->
+    <!--    <h3>Визуализашка бора</h3>-->
+    <!--    <form>-->
+    <!--&lt;!&ndash;        <input type=text name=textField class="txtform" placeholder="Введите слова через пробел" size=90> <input type="button" class="btn" value="Build" onClick="getDataAndGo()">&ndash;&gt;-->
+    <!--        <form>-->
+    <!--            <input type="text" onkeypress="if (event.keyCode==13){buildPrefixTree(); return false;}" name="textField" class="txtform" id="pref-tree-input" placeholder="Введите текст" size=90 style="padding-left: 7px;" > <input type="button" class="btn" value="Build" onClick="buildPrefixTree()">-->
+    <!--            <label for="pref-tree-output" ></label><textarea class="txtform"  id="pref-tree-output" style="width: 630px; margin-top: 10px; resize: vertical; min-height: 15px; height: 15px; padding-left: 7px;" readonly></textarea>-->
+    <!--        </form>-->
+    <!--    </form>-->
+
+    <!--    <svg width="835" height="371.5" > </svg>-->
+    <!--    <script src="https://d3js.org/d3.v4.min.js"></script>-->
+    <!--    <script src="../scripts/mainpage_graph.js" defer></script>-->
+    <!--    <svg id="example-2" width="500" height="100" onload="drawGraph(id)"> </svg>-->
+    <!--</section>-->
+
+    <!--    Визуализация    -->
+    <!--<section>-->
+    <!--    <h3>Визуализашка сжатого бора</h3>-->
+    <!--    <form>-->
+    <!--        <input type=text name=textField class="txtform-green" placeholder="Введите слова через пробел" size=90 style="height: 20px"> <input type="button" class="btn-green" value="Build" onClick="getDataAndGo()">-->
+    <!--    </form>-->
+    <!--</section>-->
+
+    <!--Бор допы-->
+    <section class="hide_section" style="border-color: #ffffff">
+        <div class="slide">
+            <h3 class="slide_root"> 👉 Больше информации о Боре   ↴</h3>
+            <p class="content">Как и почему используют Бор: <br>
+            <ul class="content">
+                <li>[Хранение строк] — если у некоторых строк одинаковые префиксы, бор занимает гораздо меньше места, чем обычный список строк </li>
+                <li>[Сортировка строк] — бор+dfs за один обход выводит строки в лексикографическом порядке</li>
+                <li>[Строковый SET] — быстрое добавление, удаление слова и проверка наличия его в боре</li>
+            </ul>
+            <p class="content"> <a href="https://ru.algorithmica.org/cs/string-structures/trie/">Algorithmica</a></p>
+            <p class="content"> <a href="https://wiki.algocode.ru/index.php?title=%D0%91%D0%BE%D1%80">Algocode wiki</a></p>
+            <p class="content"> <a href="https://brestprog.by/topics/trie/">Bestprog</a></p>
+            <p class="content"> <a href="https://cmps-people.ok.ubc.ca/ylucet/DS/Trie.html">Trie visualization</a></p>
+            <p class="content"> <a href="https://cmps-people.ok.ubc.ca/ylucet/DS/CompressedTrie.html">Compressed trie visualization</a></p>
+
+        </div>
+    </section>
+
+</body>
+
+</html>

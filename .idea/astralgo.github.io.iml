@@ -12,5 +12,10 @@
     <orderEntry type="library" name="d3.v7" level="application" />
     <orderEntry type="library" name="cytoscape" level="application" />
     <orderEntry type="library" name="jquery-2.1.3" level="application" />
+    <orderEntry type="library" name="d3.v4" level="application" />
+    <orderEntry type="library" name="d3-color" level="application" />
+    <orderEntry type="library" name="d3-interpolate" level="application" />
+    <orderEntry type="library" name="d3-scale-chromatic" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
   </component>
 </module>

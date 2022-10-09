@@ -1,0 +1,41 @@
+{
+  "nodes": [
+    {"id": "1", "name": "Astralgo", "group": 1},
+
+
+    {"id": "2", "name": "Поиск подстроки в строке", "group": 3},
+
+    {"id": "3", "name": "Наивный алгоритм", "group": 4},
+    {"id": "4", "name": "КМП", "group": 4},
+
+    {"id": "5", "name": "Сжатый бор","group": 5},
+
+    {"id": "6", "name": "Препроцессинг","group": 6},
+    {"id": "7", "name": "Префикс-функция","group": 7},
+    {"id": "8", "name": "Z-функция","group": 7},
+    {"id": "9", "name": "Бор","group": 7},
+    {"id": "10", "name": "Суффиксный массив","group": 7},
+
+    {"id": "11", "name": "Алгоритм Колусси","group": 8},
+
+    {"id": "12", "name": "Ахо-Корасик","group": 9}
+  ],
+  "links": [
+    {"source": "1", "target": "2", "value": 1, "distance" : 50},
+    {"source": "2", "target": "3", "value": 1, "distance" : 100},
+
+    {"source": "6", "target": "2", "value": 1, "distance" : 70},
+    {"source": "6", "target": "7", "value": 1, "distance" : 70},
+    {"source": "6", "target": "8", "value": 1, "distance" : 70},
+    {"source": "6", "target": "9", "value": 1, "distance" : 70},
+    {"source": "6", "target": "10", "value": 1, "distance" : 70},
+
+    {"source": "7", "target": "4", "value": 1, "distance" : 70},
+
+    {"source": "11", "target": "4", "value": 1, "distance" : 70},
+    {"source": "9", "target": "6", "value": 1, "distance" : 70},
+    {"source": "5", "target": "9", "value": 1, "distance" : 70},
+    {"source": "12", "target": "7", "value": 1, "distance" : 150},
+    {"source": "12", "target": "5", "value": 1, "distance" : 120}
+  ]
+}

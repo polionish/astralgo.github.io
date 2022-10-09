@@ -1,0 +1,14 @@
+id,value
+ ,
+ .a,
+ .a.a,
+ .a.a.a,3
+ .a.a.ba,3
+ .a.a.c,3
+ .a.ba,3
+ .b,3
+ .b.a,
+ .b.ab,3
+ .b.ab.c,3
+ .b.bab,
+ .b.cc,3
