@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{cytoscape, d3-color, d3-interpolate, d3-scale-chromatic, d3.v4, d3.v7, graphdracula, jquery, jquery-2.1.3}" />
+    <file url="PROJECT" libraries="{cytoscape, d3-color, d3-interpolate, d3-scale-chromatic, d3.v4, d3.v7, jquery, jquery-2.1.3}" />
   </component>
 </project>
